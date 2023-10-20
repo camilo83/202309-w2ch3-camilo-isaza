@@ -16,12 +16,6 @@ export const pushArray = (arr, n) => {
   return answ;
 };
 
-const arr = [1, 2, 3];
-const num = 4;
-pushArray(arr, num);
-console.log(arr);
-console.log(pushArray(arr, num));
-
 export const popArray = (arr) => {
   const c = arr.length;
   const x = arr[c - 1];
