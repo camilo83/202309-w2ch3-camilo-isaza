@@ -76,3 +76,14 @@ export const joinArray = (arr) => {
 
   return r;
 };
+
+export const mapArray = (arr, callback) => {
+  arr = structuredClone(arr);
+  const newData = [];
+  for (let i = 0; i < arrayLength(arr); i++) {
+    const item = arr[i];
+    newData[i] = callback(item, i, arr);
+  }
+
+  return newData;
+};

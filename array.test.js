@@ -8,6 +8,7 @@ import {
   indexOfArray,
   reduceOfArray,
   joinArray,
+  mapArray,
 } from './array.js';
 
 describe('Given arrayLength', () => {
@@ -312,5 +313,23 @@ describe('Given joinArray', () => {
     const expected = 'null-null-3-H';
     const result = joinArray(testData);
     expect(result).toBe(expected);
+  });
+});
+
+describe('Given mapArray', () => {
+  test('should first', () => {
+    const testData = [1, 2, 3, 4];
+    const expected = [2, 4, 6, 8];
+    const callback = (item) => item * 2;
+    const result = mapArray(testData, callback);
+    expect(result).toStrictEqual(expected);
+  });
+
+  test('should first', () => {
+    const testData = ['A', 'B', 'C', 'D'];
+    const expected = [NaN, NaN, NaN, NaN];
+    const callback = (item) => item * 2;
+    const result = mapArray(testData, callback);
+    expect(result).toStrictEqual(expected);
   });
 });
