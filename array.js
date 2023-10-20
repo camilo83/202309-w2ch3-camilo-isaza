@@ -9,11 +9,18 @@ export const arrayLength = (arr) => {
   return count;
 };
 
-export const pushArray = (arr) => {
+export const pushArray = (arr, n) => {
   const x = arrayLength(arr);
   const answ = x + 1;
+  arr[x] = n;
   return answ;
 };
+
+const arr = [1, 2, 3];
+const num = 4;
+pushArray(arr, num);
+console.log(arr);
+console.log(pushArray(arr, num));
 
 export const popArray = (arr) => {
   const c = arr.length;
@@ -33,7 +40,7 @@ export const shiftArray = (arr) => {
   return x;
 };
 
-export const someArray = (arr, x) => {
+export const includesArray = (arr, x) => {
   for (let i = 0; i < arrayLength(arr); i++) {
     if (arr[i] === x) {
       return true;
@@ -41,4 +48,37 @@ export const someArray = (arr, x) => {
   }
 
   return false;
+};
+
+export const indexOfArray = (arr, x) => {
+  for (let i = 0; i < arrayLength(arr); i++) {
+    if (arr[i] === x) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+
+export const reduceOfArray = (arr, c, op) => {
+  let counter = c;
+  for (let i = 0; i < arrayLength(arr); i++) {
+    counter = op(counter, arr[i]);
+  }
+
+  return counter;
+};
+
+export const joinArray = (arr) => {
+  let r = '';
+  for (let i = 0; i < arrayLength(arr); i++) {
+    if (arrayLength(arr) === i + 1) {
+      r += arr[i];
+    } else {
+      r += arr[i];
+      r += '-';
+    }
+  }
+
+  return r;
 };
