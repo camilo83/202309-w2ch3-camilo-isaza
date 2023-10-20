@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "test:coverage": "jest --watchAll --coverage",
+    "test:prod": "jest --watchAll --coverage --watchAll=false --passWithNoTests",
     "prepare": "husky install",
     "sass": "sass scss:css -w --no-source-map"
   },
